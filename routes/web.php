@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductController;
 
 /*
@@ -19,4 +20,5 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 Route::get('/',[ProductController::class, 'index'])->name('main.products');
+Route::resource('/admin',AdminController::class);
 
